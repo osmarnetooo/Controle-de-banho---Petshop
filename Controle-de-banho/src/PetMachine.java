@@ -87,7 +87,6 @@ public class PetMachine {
         
         this.pet = null;
         System.out.println("Retirando o pet da maquina.");
-        System.out.println("O pet esta limpo.");
     }
     
     public void wash(){

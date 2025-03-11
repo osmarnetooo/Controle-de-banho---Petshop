@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         //scanner.useDelimiter("\\n");
-        var option = -1;
+        int option;
 
         do { 
             System.out.println(" ");
