@@ -23,6 +23,7 @@ public class Main {
             System.out.println("0 - Sair.");
             System.out.println(" ");
             option = scanner.nextInt();
+            scanner.nextLine();
 
             switch (option) {
                 case 1 -> petMachine.takeAShower();
@@ -54,7 +55,7 @@ public class Main {
         var name = "";
         while(name == null || name.isEmpty()){
             System.out.print("Informe o nome do pet: ");
-            name = scanner.next();
+            name = scanner.nextLine();
         }
         var pet = new Pet(name);
         petMachine.setPet(pet);

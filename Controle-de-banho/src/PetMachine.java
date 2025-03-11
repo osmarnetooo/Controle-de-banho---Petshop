@@ -8,9 +8,15 @@ public class PetMachine {
 
     public void takeAShower(){
         if(this.pet != null) {
-            System.out.println("Coloque o pet na maquina para iniciar o banho.");
+            System.out.println("Iniciando o banho.");
+            System.out.println("Agarde um pouco.");
             //return;
-        }else{
+        }else if(this.pet == null) {
+            System.out.println("O banho não pode ser iniciado, pois não tem pet na maquina.");
+            System.out.println("Primeiro coloque o pet na maquina.");
+            return;
+        }
+        else{
             System.out.println("A maquina ja tem um pet. Aguarde sa vez!!!");
             return;
         }
@@ -19,6 +25,7 @@ public class PetMachine {
         shampoo -= 2;
         pet.setClean(true);
         System.out.println("O pet "+ pet.getName() +" esta limpo.");
+        System.out.println("Retire o pet da maquina.");
     }
 
     public void addWater(){
@@ -72,13 +79,22 @@ public class PetMachine {
     }
 
     public void removePet(){
+        if(this.pet == null){
+            System.out.println("Não tem pet na maquina para ser retirado.");
+            return;
+        }
         this.clean = this.pet.isClean();
         
         this.pet = null;
+        System.out.println("Retirando o pet da maquina.");
         System.out.println("O pet esta limpo.");
     }
     
     public void wash(){
+        if(this.clean == true){
+            System.out.println("A maquina já está limpa. Não precisa de limpeza no momento.");
+            return;
+        }
         this.water -= 3;
         this.shampoo -= 1;
         this.clean = true;
